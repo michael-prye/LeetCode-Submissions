@@ -1,11 +1,6 @@
 def getCommon( nums1: list[int], nums2: list[int]) -> int:
-        i = j = 0
-        while i < len(nums1) and j < len(nums2):
-            if nums1[i] < nums2[j]:
-                i += 1
-            elif nums1[i] > nums2[j]:
-                j += 1
-            else:
-                return nums1[i]
-        return -1
+       common = set(nums1).intersection(set(nums2))
+       if len(common):
+              return min(common)
+       return -1
 print(getCommon([1,2,3],[2,4]))
